@@ -1,3 +1,5 @@
 export default function getResponseFromAPI() {
-  return Promise(() => {});
+  return Promise(() => {
+    //returns an empty promise
+  });
 }
