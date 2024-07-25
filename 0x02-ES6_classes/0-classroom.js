@@ -1,6 +1,6 @@
 /**
-Declares a new class called ClassRoom
-*/
+ *Declares a new class called ClassRoom
+ */
 export default class ClassRoom {
   /**
    * Creates a new @see {@link ClassRoom}.
@@ -9,5 +9,5 @@ export default class ClassRoom {
    */
   constructor(maxStudentsSize) {
     this._maxStudentsSize = maxStudentsSize;
-  };
+  }
 }
