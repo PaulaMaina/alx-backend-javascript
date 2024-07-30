@@ -1,6 +1,9 @@
 export  default function getStudentIdsSum(students) {
   if (students instanceof Array) {
-    return students.reduce((acc, val) => acc + val, 0);
+    return students.reduce(
+      (acc, val) => acc.id || acc + val.id,
+      0,
+    );
   }
-  return [];
+  return 0;
 }
