@@ -1,4 +1,4 @@
-interface Student {
+export interface Student {
   firstName: string;
   lastName: string;
   age: number;
@@ -29,8 +29,8 @@ export const displayStudents = (students: Array<Student>): void => {
   const tableHead = document.createElement('thead');
   const headerRow = document.createElement('tr');
   const tableBody = document.createElement('tbody');
-  headerRow.insertAdjacentHTML('beforeend', '<td>FirstName</td');
-  headerRow.insertAdjacentHTML('beforeend', '<td>Location</td');
+  headerRow.insertAdjacentHTML('beforeend', '<td>FirstName</td>');
+  headerRow.insertAdjacentHTML('beforeend', '<td>Location</td>');
   tableHead.insertAdjacentElement('beforeend', headerRow);
 
   for (const student of students) {
@@ -46,7 +46,3 @@ export const displayStudents = (students: Array<Student>): void => {
 };
 
 displayStudents(studentsList);
-const styleSheetElement = document.createElement('style');
-styleSheetElement.innerHTML = styleSheet;
-document.head.insertAdjacentElement('beforeend', styleSheetElement);
-document.title = 'Task 0';
