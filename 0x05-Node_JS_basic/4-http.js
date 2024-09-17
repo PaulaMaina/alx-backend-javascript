@@ -5,11 +5,11 @@ const host = 'localhost';
 const app = http.createServer();
 
 app.on('request', (_, res) => {
-  const response = "Hello Holberton School!";
+  const resText = "Hello Holberton School!";
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Content-Length', response.length);
-  res.write(Buffer.from(response));
+  res.setHeader('Content-Length', resText.length);
+  res.write(Buffer.from(resText));
 });
 
 app.listen(port, host, () => {
