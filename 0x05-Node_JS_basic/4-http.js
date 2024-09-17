@@ -3,7 +3,7 @@ const http = require('http');
 const app = http.createServer();
 
 app.on('request', (_, res) => {
-  const resText = "Hello Holberton School!";
+  const resText = 'Hello Holberton School!';
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
