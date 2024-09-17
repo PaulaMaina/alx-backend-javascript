@@ -22,7 +22,7 @@ class StudentsController {
           resParts.push([
             `Number of students in ${field}: ${group}.length}.`,
             'List:',
-            group.map((std) => std.firstname).join(', '),
+            group.map((std) => std.firstname).join(', ')
 	  ].join(' '));
         }
         response.status(200).send(resParts.join('\n'));
