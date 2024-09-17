@@ -48,7 +48,7 @@ const countStudents = (fileData) => new Promise((resolve, reject) => {
 });
 
 app.get('/', (_, res) => {
-      res.send('Hello Holberton School!');
+  res.send('Hello Holberton School!');
 });
 app.get('/students', (_, res) => {
   const resMessage = ['This is the list of our students'];
