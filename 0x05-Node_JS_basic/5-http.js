@@ -50,39 +50,39 @@ const countStudents = (fileData) => new Promise((resolve, reject) => {
 const serverRouteHandlers = [
   {
     route: '/',
-    handler(_, res) {
+    handler (_, res) {
       const resText = 'Hello Holberton School!';
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Content-Length', resText.length);
       res.write(Buffer.from(resText));
-    },
+    }
   },
   {
     route: '/students',
-    handler(_, res) {
+    handler (_, res) {
       const resMessage = ['This is the list of our students'];
 
       countStudents(dbFile)
         .then((response) => {
-        resMessage.push(response);
-	const resText = resMessage.join('\n');
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-        res.setHeader('Content-Length', resText.length);
-        res.write(Buffer.from(resText));
-      })
-      .catch((error) => {
-        resMessage.push(error instanceof Error ? error.message : error.toString());
-        const resText = resMessage.join('\n');
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-        res.setHeader('Content-Length', resText.length);
-        res.write(Buffer.from(resText));
-      });
-    },
-  },
+          resMessage.push(response);
+          const resText = resMessage.join('\n');
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/plain');
+          res.setHeader('Content-Length', resText.length);
+          res.write(Buffer.from(resText));
+        })
+        .catch((error) => {
+          resMessage.push(error instanceof Error ? error.message : error.toString());
+          const resText = resMessage.join('\n');
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/plain');
+          res.setHeader('Content-Length', resText.length);
+          res.write(Buffer.from(resText));
+        });
+    }
+  }
 ];
 
 app.on('request', (req, res) => {
