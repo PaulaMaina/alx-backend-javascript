@@ -45,7 +45,7 @@ describe('API integration tests', () => {
     request.get(`${apiURL}/available_payments`, (_error, res, body) => {
       expect(res.statusCode).to.be.equal(200);
       expect(JSON.parse(body)
-        .to.be.deep.equal({payment_methods: {credit_cards: true, paypal: false}});
+        .to.be.deep.equal({payment_methods: {credit_cards: true, paypal: false}}));
       done();
     });
   });
