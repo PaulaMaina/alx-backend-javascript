@@ -20,7 +20,7 @@ class StudentsController {
         };
         for (const [field, group] of Object.entries(stdGroups).sort(compFunc)) {
           resParts.push([
-            `Number of students in ${field}: ${group}.length}.`,
+            `Number of students in ${field}: ${group.length}.`,
             'List:',
             group.map((std) => std.firstname).join(', ')].join(' '));
         }
