@@ -50,18 +50,18 @@ const countStudents = (fileData) => new Promise((resolve, reject) => {
 const serverRouteHandlers = [
   {
     route: '/',
-    handler (_, res) {
+    handler(_, res) {
       const resText = 'Hello Holberton School!';
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Content-Length', resText.length);
       res.write(Buffer.from(resText));
-    }
+    },
   },
   {
     route: '/students',
-    handler (_, res) {
+    handler(_, res) {
       const resMessage = ['This is the list of our students'];
 
       countStudents(dbFile)
@@ -81,8 +81,8 @@ const serverRouteHandlers = [
           res.setHeader('Content-Length', resText.length);
           res.write(Buffer.from(resText));
         });
-    }
-  }
+    },
+  },
 ];
 
 app.on('request', (req, res) => {
