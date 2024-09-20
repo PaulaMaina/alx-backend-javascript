@@ -3,7 +3,7 @@ import readDatabase from '../utils';
 const validMajors = ['CS', 'SWE'];
 
 class StudentsController {
-  static getAllStudents (request, response) {
+  static getAllStudents(request, response) {
     const fileData = process.argv.length > 2 ? process.argv[2] : '';
 
     readDatabase(fileData)
@@ -13,7 +13,7 @@ class StudentsController {
           if (x[0].toLowerCase() < y[0].toLowerCase()) {
             return -1;
           }
-          if (x[0].toLowerCase > y[0].toLowerCase()) {
+          if (x[0].toLowerCase() > y[0].toLowerCase()) {
             return 1;
           }
           return 0;
@@ -33,7 +33,7 @@ class StudentsController {
       });
   }
 
-  static getAllStudentsByMajor (request, response) {
+  static getAllStudentsByMajor(request, response) {
     const fileData = process.argv.length > 2 ? process.argv[2] : '';
     const { major } = request.params;
 
